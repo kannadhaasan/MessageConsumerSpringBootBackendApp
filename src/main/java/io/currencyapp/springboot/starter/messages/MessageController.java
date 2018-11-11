@@ -19,16 +19,16 @@ public class MessageController {
 	
 	@RequestMapping("/messages")
 	public List<Messages> getAllTopics() {
-		return topicService.getAllTopic();
+		return topicService.getAllMessage();
 	}
 
 	@RequestMapping("/messages/{id}")
 	public Messages getTopic(@PathVariable String id) {
-		return topicService.getTopic(id);
+		return topicService.getMessage(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/messages")
 	public void addTopic(@RequestBody Messages topic) {
-		topicService.addTopic(topic);
+		topicService.addMessage(topic);
 	}
 }
